@@ -14,7 +14,7 @@
 
         <img
          class="logo"
-         src="images/logo.png" 
+         src="logo.png" 
          alt="Logo da site" >
         <h1>A sua doação importa</h1>
         <p>Até tres vida com uma doação</p>
@@ -26,7 +26,7 @@
     </header>
     <section class="form hide">
         <h2>Entre na lista de doadores!</h2>
-        <form action="POST">
+        <form action="/" method="POST">
             <input 
              type="text"
              name="name"
@@ -49,35 +49,22 @@
         
         <h2>Últimos <span>doadores</span></h2>
 
+
         <section class="donors" >
-            <div class="donor">
-                <div class="blood">AB+</div>
-                <p>Gustavo Fagundes</p>
-
-
-            </div>
-            <div class="donor">
-                <div class="blood">O+</div>
-                <p>Mariane Fagundes</p>
-
-
-            </div>
-            <div class="donor">
-                <div class="blood">A+</div>
-                <p>Anny Karoliny</p>
-                
-                
-            </div>
-            <div class="donor">
-                <div class="blood">A+</div>
-                <p>Gabriel Sacavem</p>
-
-
-            </div>
+      
             
+        {% for donor in donors %}
+
             
+            <div class="donor">
+                <div class="blood">{{donor.blood}}</div>
+                <p>{{donor.name}}</p>
+            </div>  
+            
+        {%endfor%}
         </section>
     </main>
+
     <footer>
         Made by: Gustavo F.
     </footer>
